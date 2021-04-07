@@ -1,0 +1,16 @@
+/*****UserInformation***********/
+
+.userInformationContainer{
+    width: 30%; 
+    background: #e6e6e6;
+}
+
+.userInformationChildContainer {
+    display: flex; 
+    margin: 5px;
+}
+
+.pHeader{
+    font-weight: bold;
+    margin-right: 5px;
+}
