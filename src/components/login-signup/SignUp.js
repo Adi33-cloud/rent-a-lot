@@ -44,7 +44,7 @@ function SignUp() {
     const [sFirstName, setSFirstName] = useState("");
     const [sLastName, setSLastName] = useState("");
     const [sBranchNumber, setSBranchNumber] = useState("");
-    const [sRole, setSRole] = useState("");
+    const [sRole, setSRole] = useState("renter");
 
     return (
         <div style={{ width: "30%", background: "#bec2bf" }}>

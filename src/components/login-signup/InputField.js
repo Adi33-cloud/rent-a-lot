@@ -1,14 +1,29 @@
-function InputField({ textId, displayText, setText }) {
+function InputField({ textId, displayText, setText, value }) {
 
     function handleChange(event)
     {
         setText(event.target.value);
     }
 
+    const inputLabel = () => {
+
+        if (value!== undefined)
+        {
+            return <input type="text" id={textId} name={textId} value={value} onChange={handleChange} />;
+        }
+        else
+        {
+            return <input type="text" id={textId} name={textId} onChange={handleChange} />;
+        }
+
+    }
+
     return (
         <div>
             <label for={textId}>{displayText}:</label>
-            <input type="text" id={textId} name={textId} onChange={handleChange} /><br></br><br></br>
+            { inputLabel()}
+            <br></br><br></br>
+            
         </div>
     );
 }

@@ -3,12 +3,12 @@ import './Renter.css';
 import InputField from '../login-signup/InputField';
 import ViewListingsDetailsModal from '../modals/ViewListingDetailsModal';
 
-function Listings({ listingName, address, rate }) {
+function Listings({ listingName, address, rate, description, renterID, amenities }) {
     const [modalOpen, setModalOpen] = useState(false);
 
     console.log("this is modalOpen:", modalOpen)
     if (modalOpen === true) {
-        return <ViewListingsDetailsModal listingName={listingName} address={address} rate={rate} description="bad description" closeFunction={setModalOpen} />
+        return <ViewListingsDetailsModal amenities={amenities} listingName={listingName} address={address} rate={rate} description={description} renterID={renterID} closeFunction={setModalOpen} />
 
     }
 

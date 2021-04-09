@@ -5,14 +5,14 @@ import ViewBookingAfterRenterModal from '../modals/ViewBookingAfterRenterModal';
 import ViewBookingAfterListerModal from '../modals/ViewBookingListerModal';
 
 
-function Bookings({ listingName, startDate, endDate }) {
+function Bookings({ reservationID, listingName, startDate, endDate, description, address, amenities, review }) {
 
     const [modalOpen, setModalOpen] = useState(false);
 
     console.log("this is modalOpen:", modalOpen)
     if (modalOpen === true) {
         //return <ViewBookingBeforeRenterModal listingName={listingName} address="1234 made up address street" description="bad description" closeFunction={setModalOpen} />
-        return <ViewBookingAfterRenterModal listingName={listingName} address="1234 made up address street" description="bad description" closeFunction={setModalOpen} />
+        return <ViewBookingAfterRenterModal review={review} amenities={amenities} reservationID={reservationID} listingName={listingName} address={address} description={description} startDate={startDate} endDate={endDate} closeFunction={setModalOpen} />
         //return <ViewBookingAfterListerModal listingName="Best Venue ever" address="1234 random address street NW" closeFunction={setModalOpen} />
 
     }

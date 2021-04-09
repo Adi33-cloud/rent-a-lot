@@ -10,8 +10,8 @@ function App() {
     <Router>
       <div className="App">
         <Route path="/" exact component={LoginSignUp} />
-        <Route path="/lister" component={Lister} />
-        <Route path="/renter" component={Renter} />
+        <Route path="/lister/:user" component={Lister} />
+        <Route path="/renter/:user" component={Renter} />
 
       </div>
     </Router>
