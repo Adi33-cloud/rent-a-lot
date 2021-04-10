@@ -15,7 +15,7 @@ const customStyles = {
 };
 
 Modal.setAppElement('#root')
-function ViewListingsDetailsModal({ listingName, address, rate, description, closeFunction, renterID, amenities }) {
+function ViewListingsDetailsModal({ listingName, address, rate, description, closeFunction, renterID, amenities, bookable }) {
 
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
@@ -91,16 +91,23 @@ function ViewListingsDetailsModal({ listingName, address, rate, description, clo
                     {showAmenities()}
                 </div>
 
+                {(bookable) ?
+                <>
                 <InputField textId="startDate" displayText="Start Date" setText={setStartDate} />
                 <InputField textId="endDate" displayText="End Date" setText={setEndDate} />
                 <InputField textId="length" displayText="Length of Stay" setText={setLength} />
 
                 <div style={{ marginTop: '5%' }}>
-                    <h2 style={{ display: "inline" }}>${rate}/Day</h2>
+                <h2 style={{ display: "inline" }}>${rate}/Day</h2>
                     <button onClick={rent} style={{ width: '60px', height: '30px', display: "inline", marginLeft: '55%', background: '#42c8f5', fontWeight: 'bold' }}>Rent</button>
 
                 </div>
-
+                </>
+                :
+                <>
+                <h2 style={{ display: "inline" }}>${rate}/Day</h2>
+                </>
+                }
 
             </Modal>
         </div>

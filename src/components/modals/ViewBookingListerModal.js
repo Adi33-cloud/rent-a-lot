@@ -14,7 +14,7 @@ const customStyles = {
 };
 
 Modal.setAppElement('#root')
-function ViewBookingListerModal({ listingName, address, closeFunction }) {
+function ViewBookingListerModal({ listingName, address, closeFunction, startDate, endDate, amount, review }) {
 
     return (
         <div>
@@ -26,12 +26,21 @@ function ViewBookingListerModal({ listingName, address, closeFunction }) {
                 <button onClick={closeFunction} style={{ display: "inline", background: '#42c8f5', marginLeft: '40%', fontWeight: 'bold' }}>X</button>
                 <h4 style={{ color: '#42c8f5' }}>{address}</h4>
 
-                <p>Start: Month day year</p>
-                <p>End: Month day year</p>
+                <p>Start: {startDate}</p>
+                <p>End: {endDate}</p>
 
-                <p>Amount Paid: $420</p>
-                <p>Review: 10/10</p>
-                <p>Comments: I would rent this again</p>
+                <p>Amount Paid: {amount}</p>
+
+                {(review==null) ?
+                <p>Review Not Yet Written</p> :
+                <>
+                <p>Review: {review.rating}/10</p>
+                <p>Comments: {review.comments}</p>
+                </>
+                
+                }
+
+                
 
 
 

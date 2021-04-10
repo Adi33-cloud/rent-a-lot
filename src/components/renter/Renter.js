@@ -29,7 +29,7 @@ function Renter( {match}) {
 
             return json;
         } catch {
-            console.log("Incorrect username/password");
+            console.log("Incorrect user");
         }
     }
 

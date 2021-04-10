@@ -45,7 +45,7 @@ function ViewListings({renterID}) {
             return (
                 <div>
                     {properties.map((property) => (
-                        <Listings amenities={property.amenities} listingName={property.name} address={property.address} rate={property.price} renterID={renterID} description={property.description} />
+                        <Listings bookable={true} amenities={property.amenities} listingName={property.name} address={property.address} rate={property.price} renterID={renterID} description={property.description} />
                     ))}
                 </div>);
         }

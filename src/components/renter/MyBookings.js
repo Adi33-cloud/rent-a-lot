@@ -41,7 +41,7 @@ function MyBookings({renterID}) {
             return (
                 <div>
                     {bookings.map((booking) => (
-                        <Bookings reservationID={booking.pk} review={booking.review} listingName={booking.address.name} startDate={booking.startTime} endDate={booking.endTime} description={booking.address.description} address={booking.address.address} amenities={booking.address.amenities} />
+                        <Bookings isLister={false} reservationID={booking.pk} review={booking.review} listingName={booking.address.name} startDate={booking.startTime} endDate={booking.endTime} description={booking.address.description} address={booking.address.address} amenities={booking.address.amenities} />
                     ))}
                 </div>);
         }
